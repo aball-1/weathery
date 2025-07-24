@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+                <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <p class="current-date" id="currentDate"></p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="zipCodeInput" 
+                    placeholder="Enter ZIP code (e.g., 78155)" 
+                    maxlength="5"
+                    pattern="[0-9]{5}"
+                >
+                <button id="searchBtn" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="location-section" id="locationSection">
+            <h2 id="locationName"></h2>
+        </div>
+
+        <div class="loading" id="loadingIndicator">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Loading weather data...</span>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="forecast-section" id="forecastSection">
+            <h3>10-Day Forecast</h3>
+            <div class="table-container">
+                <table id="forecastTable">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>High</th>
+                            <th>Low</th>
+                            <th>Precipitation</th>
+                            <th>Wind</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="forecastTableBody">
+                        <!-- Forecast data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Weather data provided by National Weather Service</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
